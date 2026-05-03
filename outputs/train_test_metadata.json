@@ -1,0 +1,194 @@
+{
+  "input_path": "Z:\\DOCUMENTS\\KPDL\\Prj_gr13\\outputs\\eda_all_plants_merged.csv",
+  "train_path": "Z:\\DOCUMENTS\\KPDL\\Prj_gr13\\outputs\\train_data_normalized.csv",
+  "test_path": "Z:\\DOCUMENTS\\KPDL\\Prj_gr13\\outputs\\test_data_normalized.csv",
+  "target_column": "AC_POWER_TOTAL",
+  "split_method": "time_ordered",
+  "test_size": 0.2,
+  "train_rows": 5133,
+  "test_rows": 1284,
+  "train_date_min": "2020-05-15 00:00:00",
+  "train_date_max": "2020-06-11 07:00:00",
+  "test_date_min": "2020-06-11 07:15:00",
+  "test_date_max": "2020-06-17 23:45:00",
+  "numeric_feature_columns_scaled": [
+    "AMBIENT_TEMPERATURE",
+    "MODULE_TEMPERATURE",
+    "IRRADIATION",
+    "HOUR",
+    "MINUTE",
+    "DAYOFWEEK",
+    "DAYOFYEAR",
+    "MONTH",
+    "HOUR_SIN",
+    "HOUR_COS",
+    "IS_DAYLIGHT",
+    "OM_TEMPERATURE_2M",
+    "OM_RELATIVE_HUMIDITY_2M",
+    "OM_DEW_POINT_2M",
+    "OM_APPARENT_TEMPERATURE",
+    "OM_PRESSURE_MSL",
+    "OM_SURFACE_PRESSURE",
+    "OM_PRECIPITATION",
+    "OM_CLOUD_COVER",
+    "OM_WIND_SPEED_10M",
+    "OM_WIND_DIRECTION_10M",
+    "OM_SHORTWAVE_RADIATION",
+    "OM_DIRECT_RADIATION",
+    "OM_DIFFUSE_RADIATION",
+    "OM_DIRECT_NORMAL_IRRADIANCE",
+    "OM_SUNSHINE_DURATION"
+  ],
+  "plant_one_hot_columns": [
+    "PLANT_NO_1",
+    "PLANT_NO_2"
+  ],
+  "dropped_default_leakage_columns": [
+    "DC_POWER_TOTAL",
+    "DAILY_YIELD_TOTAL",
+    "TOTAL_YIELD_TOTAL",
+    "ZERO_AC_COUNT",
+    "ZERO_AC_RATIO",
+    "ACTIVE_SOURCE_COUNT"
+  ],
+  "imputer": {
+    "strategy": "median",
+    "values": {
+      "AMBIENT_TEMPERATURE": 26.34470161666666,
+      "MODULE_TEMPERATURE": 26.834300766666665,
+      "IRRADIATION": 0.01958118064999995,
+      "HOUR": 11.0,
+      "MINUTE": 15.0,
+      "DAYOFWEEK": 3.0,
+      "DAYOFYEAR": 149.0,
+      "MONTH": 5.0,
+      "HOUR_SIN": 1.2246467991473532e-16,
+      "HOUR_COS": -1.8369701987210294e-16,
+      "IS_DAYLIGHT": 1.0,
+      "OM_TEMPERATURE_2M": 30.1,
+      "OM_RELATIVE_HUMIDITY_2M": 56.0,
+      "OM_DEW_POINT_2M": 20.2,
+      "OM_APPARENT_TEMPERATURE": 32.0,
+      "OM_PRESSURE_MSL": 1006.7,
+      "OM_SURFACE_PRESSURE": 947.0,
+      "OM_PRECIPITATION": 0.0,
+      "OM_CLOUD_COVER": 56.0,
+      "OM_WIND_SPEED_10M": 14.0,
+      "OM_WIND_DIRECTION_10M": 263.0,
+      "OM_SHORTWAVE_RADIATION": 22.0,
+      "OM_DIRECT_RADIATION": 4.0,
+      "OM_DIFFUSE_RADIATION": 18.0,
+      "OM_DIRECT_NORMAL_IRRADIANCE": 30.0,
+      "OM_SUNSHINE_DURATION": 0.0
+    }
+  },
+  "scaler": {
+    "type": "standard",
+    "values": {
+      "AMBIENT_TEMPERATURE": {
+        "mean": 27.223168070310837,
+        "std": 4.119050133652907
+      },
+      "MODULE_TEMPERATURE": {
+        "mean": 32.654836535443145,
+        "std": 12.394902772094719
+      },
+      "IRRADIATION": {
+        "mean": 0.24147468635282496,
+        "std": 0.3192436291751183
+      },
+      "HOUR": {
+        "mean": 11.475939996103643,
+        "std": 6.90931318770524
+      },
+      "MINUTE": {
+        "mean": 22.492694330800703,
+        "std": 16.76920131109415
+      },
+      "DAYOFWEEK": {
+        "mean": 2.9951295538671343,
+        "std": 2.03987515226537
+      },
+      "DAYOFYEAR": {
+        "mean": 149.26787453730762,
+        "std": 7.899163256335694
+      },
+      "MONTH": {
+        "mean": 5.384960062341711,
+        "std": 0.48658587396632963
+      },
+      "HOUR_SIN": {
+        "mean": 0.0022403918642272622,
+        "std": 0.7080919343880563
+      },
+      "HOUR_COS": {
+        "mean": -0.00152218934514209,
+        "std": 0.7061150586402138
+      },
+      "IS_DAYLIGHT": {
+        "mean": 0.5423728813559322,
+        "std": 0.49820130361691756
+      },
+      "OM_TEMPERATURE_2M": {
+        "mean": 30.483109292811218,
+        "std": 5.102786195604627
+      },
+      "OM_RELATIVE_HUMIDITY_2M": {
+        "mean": 55.6777712838496,
+        "std": 22.585495871221752
+      },
+      "OM_DEW_POINT_2M": {
+        "mean": 19.03011883888564,
+        "std": 3.4347346093471107
+      },
+      "OM_APPARENT_TEMPERATURE": {
+        "mean": 32.264250925384765,
+        "std": 4.752573309022039
+      },
+      "OM_PRESSURE_MSL": {
+        "mean": 1006.3094681472822,
+        "std": 2.49516812811078
+      },
+      "OM_SURFACE_PRESSURE": {
+        "mean": 956.3657705045782,
+        "std": 13.464435594815635
+      },
+      "OM_PRECIPITATION": {
+        "mean": 0.14905513345022406,
+        "std": 0.8987694162292362
+      },
+      "OM_CLOUD_COVER": {
+        "mean": 55.12176115332164,
+        "std": 38.1774770563625
+      },
+      "OM_WIND_SPEED_10M": {
+        "mean": 13.765283459964932,
+        "std": 5.400031270204172
+      },
+      "OM_WIND_DIRECTION_10M": {
+        "mean": 241.70348723943113,
+        "std": 72.4971159097419
+      },
+      "OM_SHORTWAVE_RADIATION": {
+        "mean": 246.91311124098968,
+        "std": 315.8277066963697
+      },
+      "OM_DIRECT_RADIATION": {
+        "mean": 165.5604909409702,
+        "std": 238.95473662143826
+      },
+      "OM_DIFFUSE_RADIATION": {
+        "mean": 81.35262030001948,
+        "std": 93.4197177786029
+      },
+      "OM_DIRECT_NORMAL_IRRADIANCE": {
+        "mean": 220.1611922852133,
+        "std": 271.9358965978296
+      },
+      "OM_SUNSHINE_DURATION": {
+        "mean": 1600.7091252678745,
+        "std": 1756.4223727977947
+      }
+    }
+  }
+}
