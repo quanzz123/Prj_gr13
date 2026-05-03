@@ -258,7 +258,59 @@ outputs/train_test_metadata.json
 - `featureMeteo.py` la script enrich weather cu, merge weather vao tung inverter row. Khong phu hop neu muc tieu la plant-level model.
 - `Plant_X_Enriched_With_Weather.csv` la output cu tu `featureMeteo.py`, khong nen dung lam input chinh cho plant-level training.
 
-## 6. Luong lam viec khuyen nghi
+## 6. Hinh anh truc quan va ket qua mo hinh cu
+
+Phan nay tong hop mot so output da co trong `outputs/`. Cac hinh va metrics nay den tu luong phan tich/model cu, khong phai tu notebook EDA moi.
+
+### Truc quan du lieu quan trong
+
+So sanh tong AC Power theo ngay giua hai plant:
+
+![Daily Generation](outputs/daily_generation_comparison.png)
+
+So sanh weather sensor theo ngay, gom irradiation va module temperature:
+
+![Daily Weather](outputs/daily_weather_comparison.png)
+
+Heatmap tuong quan dac trung theo tung plant:
+
+| Plant 1 | Plant 2 |
+| :---: | :---: |
+| ![Plant 1 Correlation](outputs/plant_1_correlation_heatmap.png) | ![Plant 2 Correlation](outputs/plant_2_correlation_heatmap.png) |
+
+Feature importance cua Random Forest:
+
+![Feature Importance](outputs/feature_importance.png)
+
+### Ket qua Random Forest cu
+
+Nguon: `outputs/metrics.json` va `outputs/metrics_from_notebook.csv`.
+
+| Scope | MAE | RMSE | R2 |
+|---|---:|---:|---:|
+| Overall | 501.15 | 1397.34 | 0.9588 |
+| Plant 1 | 257.74 | 531.90 | 0.9955 |
+| Plant 2 | 743.81 | 1901.84 | 0.8818 |
+
+Du doan vs thuc te tren tap test:
+
+| Plant 1 | Plant 2 |
+| :---: | :---: |
+| ![Plant 1 Predictions](outputs/plant_1_predictions.png) | ![Plant 2 Predictions](outputs/plant_2_predictions.png) |
+
+### Ket qua LSTM cu
+
+Nguon: `outputs/lstm_metrics.csv`.
+
+| Scope | MAE | RMSE | R2 |
+|---|---:|---:|---:|
+| Overall | 1090.35 | 2053.79 | 0.9108 |
+| Plant 1 | 1068.96 | 2024.31 | 0.9351 |
+| Plant 2 | 1111.07 | 2081.96 | 0.8590 |
+
+Luu y: cac ket qua tren chi nen xem la baseline/tham khao. Neu thay doi pipeline EDA, feature Open-Meteo, cach split, hoac cach chuan hoa, can train va danh gia lai.
+
+## 7. Luong lam viec khuyen nghi
 
 1. Dam bao CSV goc nam trong `datasets/` hoac root.
 2. Lay Open-Meteo neu can:
@@ -270,6 +322,6 @@ outputs/train_test_metadata.json
 3. Chay toan bo `EDASolarPowerGenerationData.ipynb`.
 4. Dung `X_train`, `X_test`, `y_train`, `y_test` cho notebook/model training rieng.
 
-## 7. Tac gia
+## 8. Tac gia
 
 Du an mon Khai pha du lieu - Nhom 13.
